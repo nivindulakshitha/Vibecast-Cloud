@@ -183,7 +183,6 @@ async function watchForNewFiles() {
                                                     console.error("\t(FILETRANS)", error);
                                                 } else {
                                                     jsonContent.songUrl = uri;
-                                                    jsonContent.quality = "500k"; // remove this line if you want to keep the quality as it is
                                                 }
                                             });
                                         }
@@ -242,7 +241,7 @@ async function deleteOldFiles() {
 
     try {
         const [files] = await storage.bucket(bucketName).getFiles();
-        const thirtyMinutesAgo = moment().tz('Asia/Colombo').subtract(3, 'minutes');
+        const thirtyMinutesAgo = moment().tz('Asia/Colombo').subtract(30, 'minutes');
 
         for (const file of files) {
             const [metadata] = await file.getMetadata();
@@ -270,6 +269,4 @@ function unlinkFile(filePath) {
 
 const watchInterval = 5000;
 setInterval(deleteOldFiles, 60000); // Check for old files every 1 minute
-//setInterval(watchForNewFiles, watchInterval); // Check for new files every 5 seconds
-//uploadFile("watch/0Ryd8975WihbObpp5cPW1t.json");
-//uploadFile("watch/6Im9k8u9iIzKMrmV7BWtlF.json");
+setInterval(watchForNewFiles, watchInterval); // Check for new files every 5 seconds
