@@ -11,10 +11,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@google-cloud/storage": "^7.9.0",
+    "@google-cloud/storage": "^7.10.0",
     "axios": "^1.6.8",
     "chromium": "^3.0.3",
     "dotenv": "^16.4.5",
-    "puppeteer": "^22.6.5"
+    "puppeteer-core": "^22.6.5"
   }
 }
