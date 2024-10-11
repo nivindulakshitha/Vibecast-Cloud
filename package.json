@@ -16,6 +16,6 @@
     "chromium": "^3.0.3",
     "dotenv": "^16.4.5",
     "moment-timezone": "^0.5.45",
-    "puppeteer-core": "^22.6.5"
+    "puppeteer-core": "^22.15.0"
   }
 }
